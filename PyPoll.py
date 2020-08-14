@@ -49,7 +49,8 @@ with open(file_to_load) as election_data:
         vote_percentage = round(float(votes) / float(total_votes) * 100, 2)
 
 # 4. Print the candidate name and percentage of votes.
-        print(f"{candidate_name}: received {vote_percentage}% of the vote.")
+        #print(f"{candidate_name}: received {vote_percentage}% of the vote.")
+        print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
         if (votes > winning_count) and (vote_percentage > winning_percentage):
      # 2. If true then set winning_count = votes and winning_percent =
@@ -58,14 +59,22 @@ with open(file_to_load) as election_data:
                 winning_percentage = vote_percentage
      # 3. Set the winning_candidate equal to the candidate's name.
                 winning_candidate = candidate_name
+                
         
 
 #Get the total votes for each candidate.
     
 
 #Get the total votes cast for the election.
-print(total_votes)
-print(winning_candidate)
+
+winning_candidate_summary = (
+    f"-------------------------\n"
+    f"Winner: {winning_candidate}\n"
+    f"Winning Vote Count: {winning_count:,}\n"
+    f"Winning Percentage: {winning_percentage:.1f}%\n"
+    f"-------------------------\n")
+print(winning_candidate_summary)
+
 # Close the file.
 
 
