@@ -76,7 +76,7 @@ winning_candidate_summary = (
 print(winning_candidate_summary)
 
 # Close the file.
-
+election_data.close()
 
 
 # Save the results to our text file.
